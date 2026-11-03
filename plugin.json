@@ -1,0 +1,13 @@
+{
+  "name": "Useless Stats",
+  "version": "1.0.0",
+  "contactEmailAddress": "plugins@4doranges.dev",
+  "hasSettingsIcon": false,
+  "hasRibbonIcon": false,
+  "requiredDependencies": {
+    "prettyui": 6398181,
+    "gepl": 6414886
+  },
+  "optionalDependencies": {},
+  "requiredPermissions": ["chatAccess"]
+}
