@@ -37,6 +37,11 @@ local stats = {
 	summons = {"Familiars/pets summoned", 0},
 	surged = {"Times Surged", 0},
 	surge_one_tile = {"Surged one tile", 0},
+	missed_brooch = {"Missed Brooch blessings", 0},
+	missed_seren = {"Missed Seren spirits", 0},
+	missed_catalyst = {"Missed Bik catalysts", 0},
+	bones_buried = {"Bones buried", 0},
+	ashes_scattered = {"Ashes scattered", 0},
 }
 
 -- Futureproofing, in case I add new things to track
@@ -234,6 +239,16 @@ function chatTrigger(event)
 		increaseStat("seren_spirits")
 	elseif msg == "You can't reach that." then
 		increaseStat("cant_reach")
+	elseif msg:find("A blessing from the gods disappears") then
+		increaseStat("missed_brooch")
+	elseif msg:find("The Seren spirit disappears") then
+		increaseStat("missed_seren")
+	elseif msg:find("A catalyst of alteration disappears") then
+		increaseStat("missed_catalyst")
+	elseif msg:find("you bury the bones") then
+		increaseStat("bones_buried")
+	elseif msg:find("You scatter the ashes") or msg:find("from the ashes into you") then
+		increaseStat("ashes_scattered")
 	end
 end
 
